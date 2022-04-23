@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   
+</head>
+<body>
+
+<p id="p1" style="text-align: center; font-size: 50px;">10</p>
+
+    <script>
+        var arr = ["red", "green", "blue", "magenta", "cyan", "lightpink", "gray", "lightgray", "lightgreen", "lightyellow"];
+        i=0;
+        // change background color for body with randome color : from array :
+        // random number : [0 -> array.length-1]
+        function getRandomIndex(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function changebgcolor() {
+            document.body.style.backgroundColor = arr[getRandomIndex(0, arr.length - 1)];
+           
+        }
+
+        setInterval("changebgcolor()", 2000);
+        
+
+        var p = document.getElementById("p1");
+        var counter = setInterval(countDown,2000)
+
+        function countDown(){
+            p.innerHTML -=1;
+            if(p.innerHTML=== "0"){
+                clearInterval(counter);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
